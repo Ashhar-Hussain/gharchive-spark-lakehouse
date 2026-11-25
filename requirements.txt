@@ -1,0 +1,8 @@
+pyspark>=3.5
+pandas
+numpy
+pyarrow
+duckdb>=1.0
+polars>=1.0
+matplotlib
+# for the DAG: apache-airflow>=2.7

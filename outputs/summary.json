@@ -1,0 +1,145 @@
+{
+  "bronze_rows": 1870675,
+  "silver_rows": 1870675,
+  "quarantine_rows": 0,
+  "idempotent": true,
+  "events_2024": 1870675,
+  "events_2026": 38471,
+  "failed_checks": [
+    {
+      "check": "volume",
+      "item": "hour 1: 2,932 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 2: 6,602 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 3: 4,818 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 4: 4,777 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 5: 4,720 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 6: 4,800 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 7: 5,005 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "volume",
+      "item": "hour 8: 4,817 events",
+      "pass": false,
+      "detail": "expected 104,035-533,862"
+    },
+    {
+      "check": "required type",
+      "item": "CreateEvent",
+      "pass": false,
+      "detail": "share 0.00% (min 2.76%)"
+    },
+    {
+      "check": "required type",
+      "item": "PushEvent",
+      "pass": false,
+      "detail": "share 0.00% (min 14.67%)"
+    },
+    {
+      "check": "required type",
+      "item": "DeleteEvent",
+      "pass": false,
+      "detail": "share 0.00% (min 0.72%)"
+    },
+    {
+      "check": "payload field",
+      "item": "pull_request.merged present",
+      "pass": false,
+      "detail": "0% of PR events"
+    },
+    {
+      "check": "payload field",
+      "item": "pull_request.additions present",
+      "pass": false,
+      "detail": "0% of PR events"
+    },
+    {
+      "check": "closed type list",
+      "item": "no unknown event types",
+      "pass": false,
+      "detail": "DiscussionEvent"
+    }
+  ],
+  "decision": {
+    "hourly_activity": "hold back",
+    "repo_activity": "hold back",
+    "bot_share": "publish"
+  },
+  "perf": [
+    {
+      "query": "count by type",
+      "variant": "gzip JSON (raw)",
+      "seconds": 7.420380115509033
+    },
+    {
+      "query": "count by type",
+      "variant": "Parquet (bronze)",
+      "seconds": 0.2934448719024658
+    },
+    {
+      "query": "distinct repos",
+      "variant": "all 8 hour-partitions",
+      "seconds": 0.6934103965759277
+    },
+    {
+      "query": "distinct repos",
+      "variant": "1 partition (pruned)",
+      "seconds": 0.28174495697021484
+    },
+    {
+      "query": "join with type dimension",
+      "variant": "broadcast hash join",
+      "seconds": 0.5315001010894775
+    },
+    {
+      "query": "join with type dimension",
+      "variant": "sort-merge join (shuffle)",
+      "seconds": 0.8032650947570801
+    }
+  ],
+  "engines": [
+    {
+      "engine": "Spark (local, 2 cores)",
+      "seconds": 0.44594502449035645
+    },
+    {
+      "engine": "DuckDB",
+      "seconds": 0.045085906982421875
+    },
+    {
+      "engine": "Polars (lazy)",
+      "seconds": 0.03930926322937012
+    }
+  ]
+}

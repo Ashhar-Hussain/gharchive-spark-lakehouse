@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite it as below."
+title: "A medallion lakehouse on GH Archive with PySpark, and the upstream change it caught"
+abstract: "A bronze/silver/gold PySpark pipeline on GH Archive with idempotent loads, data contracts and engine benchmarks."
+authors:
+  - family-names: Hussain
+    given-names: Ashhar
+    orcid: "https://orcid.org/0009-0009-1568-9852"
+    affiliation: "Department of Computer Science and Information Technology, University of Kotli, AJ&K, Pakistan"
+repository-code: "https://github.com/Ashhar-Hussain/gharchive-spark-lakehouse"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-25"
+keywords:
+  - PySpark
+  - data engineering
+  - lakehouse
+  - data quality
+  - data contracts
+  - GH Archive
+  - Airflow
